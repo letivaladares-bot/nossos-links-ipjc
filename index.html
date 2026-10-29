@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>IPJC — Links</title>
+  <meta name="description" content="Todos os links da Igreja Presbiteriana em Jardim Camburi: cultos ao vivo, programação, boletim, pedido de oração, contribuição e mais.">
+  <meta name="theme-color" content="#F2EDE4">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="IPJC — Links">
+  <meta property="og:description" content="Com Jesus, o jardim é mais bonito. Todos os links da igreja em um só lugar.">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:image" content="assets/img/og-ipjc.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/img/ipjc-simbolo.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/img/ipjc-simbolo.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Poppins:wght@300;400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/links.css">
+
+  <script src="js/icones.js" defer></script>
+  <script src="js/links.js" defer></script>
+</head>
+<body class="lk">
+  <div class="lk-fundo" aria-hidden="true"></div>
+
+  <main class="lk-pagina" id="conteudo">
+    <header class="lk-perfil">
+      <a class="lk-logo" href="https://www.ipjc.org.br/" aria-label="Site da Igreja Presbiteriana em Jardim Camburi">
+        <img src="assets/img/ipjc-logo.svg" alt="Igreja Presbiteriana em Jardim Camburi" width="300" height="81">
+      </a>
+      <p class="lk-frase" id="lk-frase"></p>
+      <p class="lk-descricao" id="lk-descricao"></p>
+      <ul class="lk-redes" id="lk-redes" aria-label="Redes sociais"></ul>
+    </header>
+
+    <a class="lk-aovivo" id="lk-aovivo" target="_blank" rel="noopener" hidden>
+      <span class="dot" aria-hidden="true"></span>
+      <strong>Ao vivo agora</strong>
+      <span>Assista ao culto</span>
+    </a>
+
+    <div class="lk-secoes" id="lk-secoes" aria-live="polite">
+      <div class="lk-carregando" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+    </div>
+
+    <button class="lk-compartilhar" type="button" id="lk-compartilhar">
+      <span class="lk-compartilhar-ico" data-icone="compartilhar"></span>
+      Compartilhar esta página
+    </button>
+  </main>
+
+  <footer class="lk-rodape">
+    <div class="calcadao" aria-hidden="true"></div>
+    <img src="assets/img/ipjc-simbolo.svg" alt="" width="40" height="45">
+    <p class="lk-rodape-texto" id="lk-rodape-texto"></p>
+    <p class="lk-rodape-endereco" id="lk-rodape-endereco"></p>
+    <a class="lk-rodape-site" href="https://www.ipjc.org.br/">ipjc.org.br</a>
+  </footer>
+
+  <div class="lk-toast" id="lk-toast" role="status" aria-live="polite"></div>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Painel de links — IPJC</title>
+  <meta name="theme-color" content="#0F3240">
+  <link rel="icon" href="assets/img/ipjc-simbolo.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Poppins:wght@300;400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/admin.css">
+
+  <script src="js/icones.js" defer></script>
+  <script src="js/vendor/qrcode.js" defer></script>
+  <script src="js/admin-config.js" defer></script>
+  <script src="js/admin.js" defer></script>
+</head>
+<body class="adm">
+
+  <!-- ============================================================ LOGIN -->
+  <main class="adm-login" id="tela-login">
+    <form class="adm-login-card" id="form-login" novalidate>
+      <img src="assets/img/ipjc-logo.svg" alt="Igreja Presbiteriana em Jardim Camburi" width="220" height="60">
+      <h1>Painel de links</h1>
+      <p>Seções e links da página dos QR Codes.</p>
+      <label class="campo"><span>Usuário</span><input type="text" name="usuario" autocomplete="username" required autofocus></label>
+      <label class="campo"><span>Senha</span><input type="password" name="senha" autocomplete="current-password" required></label>
+      <p class="adm-login-erro" id="login-erro" role="alert"></p>
+      <button class="btn" type="submit">Entrar</button>
+      <a class="adm-voltar" href="index.html">← Ver a página de links</a>
+    </form>
+  </main>
+
+  <!-- ============================================================ PAINEL -->
+  <div class="adm-app" id="tela-app" hidden>
+    <header class="adm-topo">
+      <img class="adm-marca" src="assets/img/ipjc-logo-branca.svg" alt="IPJC" width="150" height="40">
+      <span class="adm-topo-titulo">Painel de links</span>
+      <a class="adm-topo-link" href="index.html" target="_blank" rel="noopener">Ver página ↗</a>
+      <button class="adm-topo-link" type="button" id="btn-sair">Sair</button>
+    </header>
+
+    <div class="adm-corpo">
+      <div class="adm-editor">
+        <!-- Barra de publicação -->
+        <div class="adm-barra" id="barra">
+          <div class="adm-barra-status">
+            <strong id="status-titulo">Tudo publicado</strong>
+            <span id="status-texto">A página está igual ao que você vê aqui.</span>
+          </div>
+          <button class="btn btn--ghost btn--p adm-so-mobile" type="button" id="btn-previa-mobile">Prévia</button>
+          <button class="btn btn--mostarda" type="button" id="btn-publicar">Publicar</button>
+        </div>
+
+        <nav class="adm-abas" role="tablist" aria-label="Seções do painel">
+          <button type="button" role="tab" class="adm-aba" data-aba="links" aria-selected="true">Links</button>
+          <button type="button" role="tab" class="adm-aba" data-aba="perfil" aria-selected="false">Perfil e redes</button>
+          <button type="button" role="tab" class="adm-aba" data-aba="publicar" aria-selected="false">Publicação</button>
+        </nav>
+
+        <section class="adm-painel" data-painel="links" id="painel-links"></section>
+        <section class="adm-painel" data-painel="perfil" id="painel-perfil" hidden></section>
+        <section class="adm-painel" data-painel="publicar" id="painel-publicar" hidden></section>
+      </div>
+
+      <!-- Prévia ao vivo -->
+      <aside class="adm-previa" id="previa" aria-label="Prévia da página">
+        <div class="adm-previa-topo">
+          <span>Prévia ao vivo</span>
+          <button type="button" class="adm-previa-fechar" id="btn-previa-fechar" aria-label="Fechar prévia">×</button>
+        </div>
+        <div class="adm-celular"><iframe id="previa-frame" src="index.html?previa" title="Prévia da página de links"></iframe></div>
+      </aside>
+    </div>
+  </div>
+
+  <!-- ============================================================ DIÁLOGO DO LINK -->
+  <dialog class="adm-dialogo" id="dialogo-link" aria-labelledby="dialogo-link-titulo">
+    <form method="dialog" class="adm-form" id="form-link" novalidate>
+      <header class="adm-dialogo-topo">
+        <h2 id="dialogo-link-titulo">Novo link</h2>
+        <button type="button" class="adm-dialogo-x" data-fechar aria-label="Fechar">×</button>
+      </header>
+
+      <label class="campo"><span>Título <em>*</em></span><input name="titulo" maxlength="70" required placeholder="Ex.: Inscrições para o Retiro"></label>
+      <label class="campo"><span>Descrição <small>(opcional, aparece embaixo do título)</small></span><input name="descricao" maxlength="90" placeholder="Ex.: Até 30/11 · vagas limitadas"></label>
+      <label class="campo"><span>Endereço (link) <em>*</em></span><input name="url" inputmode="url" required placeholder="https://..."></label>
+      <p class="adm-ajuda">Dica: para WhatsApp, use <code>https://wa.me/5527999999999</code>.</p>
+
+      <div class="campo">
+        <span>Ícone</span>
+        <div class="adm-icones" id="seletor-icones" role="radiogroup" aria-label="Ícone"></div>
+      </div>
+
+      <label class="campo campo--meia"><span>Seção</span><select name="secao" id="link-secao"></select></label>
+      <div class="campo--meia adm-chaves">
+        <label class="adm-chave"><input type="checkbox" name="ativo"><span>Visível na página</span></label>
+        <label class="adm-chave"><input type="checkbox" name="destaque"><span>Destaque (cartão grande)</span></label>
+      </div>
+
+      <fieldset class="adm-periodo">
+        <legend>Período <small>(opcional — o link aparece e some sozinho)</small></legend>
+        <label class="campo campo--meia"><span>Mostrar a partir de</span><input type="date" name="inicio"></label>
+        <label class="campo campo--meia"><span>Mostrar até</span><input type="date" name="fim"></label>
+      </fieldset>
+
+      <p class="adm-form-erro" id="link-erro" role="alert"></p>
+      <footer class="adm-dialogo-acoes">
+        <button type="button" class="btn btn--perigo btn--p" id="btn-excluir-link">Excluir link</button>
+        <span class="adm-espaco"></span>
+        <button type="button" class="btn btn--ghost" data-fechar>Cancelar</button>
+        <button type="submit" class="btn" id="btn-salvar-link">Salvar</button>
+      </footer>
+    </form>
+  </dialog>
+
+  <div class="adm-toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
