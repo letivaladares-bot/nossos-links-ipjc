@@ -4,13 +4,7 @@
     "frase": "Com Jesus, o jardim é *mais bonito*",
     "descricao": "Cultos aos domingos, 9h e 18h30 · Vitória/ES"
   },
-  "redes": [
-    { "tipo": "instagram", "url": "https://www.instagram.com/ipbjardimcamburi/" },
-    { "tipo": "youtube", "url": "https://www.youtube.com/@ipbjardimcamburi" },
-    { "tipo": "spotify", "url": "https://open.spotify.com/show/1FKtu2z3D4wswzajEqSoQm" },
-    { "tipo": "facebook", "url": "https://www.facebook.com/ipjc.vix" },
-    { "tipo": "whatsapp", "url": "https://wa.me/5527981283997" }
-  ],
+  "redes": [],
   "aoVivo": {
     "ativo": true,
     "url": "https://www.youtube.com/@ipbjardimcamburi/live",
@@ -18,73 +12,247 @@
   },
   "secoes": [
     {
-      "id": "destaques",
-      "titulo": "",
+      "id": "visitante",
+      "titulo": "Primeira vez aqui?",
       "recolhida": false,
+      "cor": "auto",
       "links": [
-        { "id": "dia-apos-dia", "titulo": "Dia Após Dia · IPJC 30 Anos", "descricao": "Conheça a campanha dos 30 anos da igreja", "url": "https://www.ipjc.org.br/", "icone": "estrela", "destaque": true, "ativo": true, "inicio": "", "fim": "" }
+        {
+          "id": "visitante",
+          "tipo": "link",
+          "titulo": "Formulário do visitante",
+          "descricao": "Queremos conhecer você",
+          "url": "https://www.ipjc.org.br/contato.html#visitante",
+          "copiar": "",
+          "rotuloUrl": "",
+          "icone": "formulario",
+          "destaque": false,
+          "ativo": true,
+          "inicio": "",
+          "fim": ""
+        },
+        {
+          "id": "como-chegar",
+          "tipo": "link",
+          "titulo": "Como chegar",
+          "descricao": "Rua Carlos Delgado Guerra Pinto, 761",
+          "url": "https://www.google.com/maps/search/?api=1&query=Rua+Carlos+Delgado+Guerra+Pinto+761+Jardim+Camburi+Vitoria+ES",
+          "copiar": "",
+          "rotuloUrl": "",
+          "icone": "pin",
+          "destaque": false,
+          "ativo": true,
+          "inicio": "",
+          "fim": ""
+        },
+        {
+          "id": "programacao",
+          "tipo": "link",
+          "titulo": "Programação da igreja",
+          "descricao": "Cultos, EBD e eventos especiais",
+          "url": "https://www.ipjc.org.br/programacoes.html",
+          "copiar": "",
+          "rotuloUrl": "",
+          "icone": "calendario",
+          "destaque": false,
+          "ativo": true,
+          "inicio": "",
+          "fim": ""
+        }
       ]
     },
     {
-      "id": "primeira-vez",
-      "titulo": "Primeira vez aqui?",
+      "id": "dizimos-e-ofertas",
+      "titulo": "Dízimos e ofertas",
       "recolhida": false,
+      "cor": "auto",
       "links": [
-        { "id": "visitante", "titulo": "Sou visitante", "descricao": "Queremos conhecer você", "url": "https://www.ipjc.org.br/contato.html#visitante", "icone": "pessoas", "destaque": false, "ativo": true, "inicio": "", "fim": "" },
-        { "id": "como-chegar", "titulo": "Como chegar", "descricao": "Rua Carlos Delgado Guerra Pinto, 761", "url": "https://www.google.com/maps/search/?api=1&query=Rua+Carlos+Delgado+Guerra+Pinto+761+Jardim+Camburi+Vitoria+ES", "icone": "pin", "destaque": false, "ativo": true, "inicio": "", "fim": "" },
-        { "id": "programacao", "titulo": "Programação da igreja", "descricao": "Cultos, EBD e eventos especiais", "url": "https://www.ipjc.org.br/programacoes.html", "icone": "calendario", "destaque": false, "ativo": true, "inicio": "", "fim": "" },
-        { "id": "whatsapp", "titulo": "Fale com a secretaria", "descricao": "WhatsApp (27) 98128-3997", "url": "https://wa.me/5527981283997", "icone": "whatsapp", "destaque": false, "ativo": true, "inicio": "", "fim": "" }
+        {
+          "id": "pix",
+          "tipo": "copiar",
+          "titulo": "Pix da igreja · CNPJ",
+          "descricao": "02.342.872/0001-63",
+          "url": "https://www.ipjc.org.br/contribua.html",
+          "copiar": "02342872000163",
+          "rotuloUrl": "Outras formas",
+          "icone": "doar",
+          "destaque": false,
+          "ativo": true,
+          "inicio": "",
+          "fim": ""
+        }
+      ]
+    },
+    {
+      "id": "programacoes",
+      "titulo": "Programações",
+      "recolhida": false,
+      "cor": "auto",
+      "links": [
+        {
+          "id": "retiro-coram-deo",
+          "tipo": "link",
+          "titulo": "Inscrição — Retiro Coram Deo",
+          "descricao": "31/10 a 02/11 · Sítio Riacho das Pedras",
+          "url": "https://app.fielweb.com.br/evento/66958/6",
+          "copiar": "",
+          "rotuloUrl": "",
+          "icone": "calendario",
+          "destaque": false,
+          "ativo": true,
+          "inicio": "",
+          "fim": "2026-11-02"
+        }
       ]
     },
     {
       "id": "assista-e-ouca",
       "titulo": "Assista e ouça",
       "recolhida": false,
+      "cor": "auto",
       "links": [
-        { "id": "youtube", "titulo": "Cultos no YouTube", "descricao": "Ao vivo aos domingos, 9h e 18h30", "url": "https://www.youtube.com/@ipbjardimcamburi", "icone": "youtube", "destaque": false, "ativo": true, "inicio": "", "fim": "" },
-        { "id": "podcast", "titulo": "Podcast IPJC", "descricao": "Sermões e reflexões no Spotify", "url": "https://open.spotify.com/show/1FKtu2z3D4wswzajEqSoQm", "icone": "fone", "destaque": false, "ativo": true, "inicio": "", "fim": "" },
-        { "id": "playlists", "titulo": "Playlists da igreja", "descricao": "Os louvores que cantamos juntos", "url": "https://open.spotify.com/user/y2sv53v2za9cbb4i47r72ddi3", "icone": "musica", "destaque": false, "ativo": true, "inicio": "", "fim": "" }
-      ]
-    },
-    {
-      "id": "participe",
-      "titulo": "Participe",
-      "recolhida": false,
-      "links": [
-        { "id": "membro", "titulo": "Quero ser membro", "descricao": "Formulário de interesse", "url": "https://mobile.fielweb.com.br/cadastro/formulario.php", "icone": "formulario", "destaque": false, "ativo": true, "inicio": "", "fim": "" },
-        { "id": "oracao", "titulo": "Pedido de oração", "descricao": "Vamos orar com você", "url": "https://www.ipjc.org.br/contato.html#oracao", "icone": "maos", "destaque": false, "ativo": true, "inicio": "", "fim": "" },
-        { "id": "pequenos-grupos", "titulo": "Pequenos Grupos", "descricao": "Discipulado nas casas", "url": "https://www.ipjc.org.br/pequenos-grupos.html", "icone": "coracao", "destaque": false, "ativo": true, "inicio": "", "fim": "" },
-        { "id": "ministerios", "titulo": "Ministérios e sociedades", "descricao": "Encontre o seu lugar para servir", "url": "https://www.ipjc.org.br/ministerios.html", "icone": "broto", "destaque": false, "ativo": true, "inicio": "", "fim": "" }
+        {
+          "id": "youtube",
+          "tipo": "link",
+          "titulo": "Cultos no YouTube",
+          "descricao": "Ao vivo aos domingos, 9h e 18h30",
+          "url": "https://www.youtube.com/@ipbjardimcamburi",
+          "copiar": "",
+          "rotuloUrl": "",
+          "icone": "youtube",
+          "destaque": false,
+          "ativo": true,
+          "inicio": "",
+          "fim": ""
+        },
+        {
+          "id": "spotify",
+          "tipo": "link",
+          "titulo": "Podcast IPJC no Spotify",
+          "descricao": "Sermões e reflexões bíblicas",
+          "url": "https://open.spotify.com/show/1FKtu2z3D4wswzajEqSoQm",
+          "copiar": "",
+          "rotuloUrl": "",
+          "icone": "spotify",
+          "destaque": false,
+          "ativo": true,
+          "inicio": "",
+          "fim": ""
+        }
       ]
     },
     {
       "id": "leia",
       "titulo": "Leia",
       "recolhida": false,
+      "cor": "auto",
       "links": [
-        { "id": "boletim", "titulo": "Boletim do mês", "descricao": "Avisos, escalas e programação", "url": "https://www.ipjc.org.br/boletins.html", "icone": "documento", "destaque": false, "ativo": true, "inicio": "", "fim": "" },
-        { "id": "plano-leitura", "titulo": "Plano de leitura bíblica", "descricao": "A Bíblia toda em um ano", "url": "https://www.ipjc.org.br/plano-leitura.html", "icone": "livro", "destaque": false, "ativo": true, "inicio": "", "fim": "" },
-        { "id": "blog", "titulo": "Blog IPJC", "descricao": "Textos para edificação", "url": "https://www.ipjc.org.br/blog.html", "icone": "enviar", "destaque": false, "ativo": true, "inicio": "", "fim": "" }
+        {
+          "id": "blog",
+          "tipo": "link",
+          "titulo": "Blog IPJC",
+          "descricao": "Textos para edificação",
+          "url": "https://www.ipjc.org.br/blog.html",
+          "copiar": "",
+          "rotuloUrl": "",
+          "icone": "enviar",
+          "destaque": false,
+          "ativo": true,
+          "inicio": "",
+          "fim": ""
+        },
+        {
+          "id": "boletim",
+          "tipo": "link",
+          "titulo": "Boletim do mês",
+          "descricao": "Avisos, escalas e programação",
+          "url": "https://www.ipjc.org.br/boletins.html",
+          "copiar": "",
+          "rotuloUrl": "",
+          "icone": "documento",
+          "destaque": false,
+          "ativo": true,
+          "inicio": "",
+          "fim": ""
+        },
+        {
+          "id": "plano-leitura",
+          "tipo": "link",
+          "titulo": "Plano de leitura bíblica",
+          "descricao": "A Bíblia toda em um ano",
+          "url": "https://www.ipjc.org.br/plano-leitura.html",
+          "copiar": "",
+          "rotuloUrl": "",
+          "icone": "livro",
+          "destaque": false,
+          "ativo": true,
+          "inicio": "",
+          "fim": ""
+        },
+        {
+          "id": "site",
+          "tipo": "link",
+          "titulo": "Site da igreja",
+          "descricao": "ipjc.org.br",
+          "url": "https://www.ipjc.org.br/",
+          "copiar": "",
+          "rotuloUrl": "",
+          "icone": "globo",
+          "destaque": false,
+          "ativo": true,
+          "inicio": "",
+          "fim": ""
+        }
       ]
     },
     {
-      "id": "contribua",
-      "titulo": "Contribua",
+      "id": "redes-sociais",
+      "titulo": "Redes sociais",
       "recolhida": false,
+      "cor": "auto",
       "links": [
-        { "id": "dizimos", "titulo": "Dízimos e ofertas", "descricao": "Pix e dados bancários", "url": "https://www.ipjc.org.br/contribua.html", "icone": "doar", "destaque": false, "ativo": true, "inicio": "", "fim": "" },
-        { "id": "ong", "titulo": "ONG Jardins Cultivando Vidas", "descricao": "Conheça e ajude o nosso trabalho social", "url": "https://www.ipjc.org.br/social.html", "icone": "presente", "destaque": false, "ativo": true, "inicio": "", "fim": "" }
-      ]
-    },
-    {
-      "id": "conheca",
-      "titulo": "Conheça a IPJC",
-      "recolhida": true,
-      "links": [
-        { "id": "site", "titulo": "Site oficial", "descricao": "ipjc.org.br", "url": "https://www.ipjc.org.br/", "icone": "globo", "destaque": false, "ativo": true, "inicio": "", "fim": "" },
-        { "id": "quem-somos", "titulo": "Quem somos", "descricao": "Nossa história, missão e valores", "url": "https://www.ipjc.org.br/quem-somos.html", "icone": "igreja", "destaque": false, "ativo": true, "inicio": "", "fim": "" },
-        { "id": "no-que-cremos", "titulo": "No que cremos", "descricao": "Cinco Solas e Símbolos de Westminster", "url": "https://www.ipjc.org.br/no-que-cremos.html", "icone": "trindade", "destaque": false, "ativo": true, "inicio": "", "fim": "" },
-        { "id": "congregacoes", "titulo": "Congregações", "descricao": "Chácara Parreiral e Santa Maria de Jetibá", "url": "https://www.ipjc.org.br/congregacoes.html", "icone": "pin", "destaque": false, "ativo": true, "inicio": "", "fim": "" }
+        {
+          "id": "instagram",
+          "tipo": "link",
+          "titulo": "Instagram",
+          "descricao": "@ipbjardimcamburi",
+          "url": "https://www.instagram.com/ipbjardimcamburi/",
+          "copiar": "",
+          "rotuloUrl": "",
+          "icone": "instagram",
+          "destaque": false,
+          "ativo": true,
+          "inicio": "",
+          "fim": ""
+        },
+        {
+          "id": "facebook",
+          "tipo": "link",
+          "titulo": "Facebook",
+          "descricao": "ipjc.vix",
+          "url": "https://www.facebook.com/ipjc.vix",
+          "copiar": "",
+          "rotuloUrl": "",
+          "icone": "facebook",
+          "destaque": false,
+          "ativo": true,
+          "inicio": "",
+          "fim": ""
+        },
+        {
+          "id": "whatsapp",
+          "tipo": "link",
+          "titulo": "WhatsApp da igreja",
+          "descricao": "(27) 98128-3997",
+          "url": "https://wa.me/5527981283997",
+          "copiar": "",
+          "rotuloUrl": "",
+          "icone": "whatsapp",
+          "destaque": false,
+          "ativo": true,
+          "inicio": "",
+          "fim": ""
+        }
       ]
     }
   ],

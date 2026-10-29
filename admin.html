@@ -88,8 +88,17 @@
 
       <label class="campo"><span>Título <em>*</em></span><input name="titulo" maxlength="70" required placeholder="Ex.: Inscrições para o Retiro"></label>
       <label class="campo"><span>Descrição <small>(opcional, aparece embaixo do título)</small></span><input name="descricao" maxlength="90" placeholder="Ex.: Até 30/11 · vagas limitadas"></label>
-      <label class="campo"><span>Endereço (link) <em>*</em></span><input name="url" inputmode="url" required placeholder="https://..."></label>
-      <p class="adm-ajuda">Dica: para WhatsApp, use <code>https://wa.me/5527999999999</code>.</p>
+      <div class="campo">
+        <span>Tipo</span>
+        <div class="adm-tipos" role="radiogroup" aria-label="Tipo">
+          <label><input type="radio" name="tipo" value="link"><span>Abre um link</span></label>
+          <label><input type="radio" name="tipo" value="copiar"><span>Copia um texto <small>(ex.: chave Pix)</small></span></label>
+        </div>
+      </div>
+      <label class="campo" data-so="copiar"><span>Texto copiado ao tocar em "Copiar" <em>*</em></span><input name="copiar" placeholder="Ex.: 02342872000163"></label>
+      <label class="campo" data-so="copiar"><span>Nome do link "saiba mais" <small>(opcional)</small></span><input name="rotuloUrl" maxlength="40" placeholder="Outras formas"></label>
+      <label class="campo"><span id="rotulo-url">Endereço (link) <em>*</em></span><input name="url" inputmode="url" placeholder="https://..."></label>
+      <p class="adm-ajuda" data-so="link">Dica: para WhatsApp, use <code>https://wa.me/5527999999999</code>.</p>
 
       <div class="campo">
         <span>Ícone</span>

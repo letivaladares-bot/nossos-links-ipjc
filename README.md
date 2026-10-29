@@ -27,6 +27,7 @@ linktree-ipjc/
 - **Seções** com título (ou sem título, no topo) e cor dos ícones (automática ou Azul Petróleo, Verde Litúrgico, Mostarda, Borgonha).
 - Seções podem **começar fechadas** (sanfona) — bom para conteúdo secundário.
 - **Links** com título, descrição, ícone, destaque (cartão grande azul-noite) e **período**: "mostrar a partir de" / "mostrar até" — o link aparece e some sozinho (ótimo para inscrições de eventos).
+- **Copiar texto** (ex.: chave Pix): cartão compacto com botão "Copiar" e link opcional "saiba mais".
 - **"Ao vivo agora"**: nos horários de culto configurados, aparece um botão pulsando que leva à transmissão.
 - Botão **Compartilhar** (menu do celular ou copia o link).
 

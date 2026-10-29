@@ -102,7 +102,7 @@
     d.secoes = (Array.isArray(d.secoes) ? d.secoes : []).map(function (s) {
       s = Object.assign({ id: '', titulo: '', recolhida: false, cor: 'auto' }, s);
       s.links = (Array.isArray(s.links) ? s.links : []).map(function (l) {
-        return Object.assign({ id: '', titulo: '', descricao: '', url: '', icone: 'link', destaque: false, ativo: true, inicio: '', fim: '' }, l);
+        return Object.assign({ id: '', tipo: 'link', titulo: '', descricao: '', url: '', copiar: '', rotuloUrl: '', icone: 'link', destaque: false, ativo: true, inicio: '', fim: '' }, l);
       });
       return s;
     });
@@ -170,7 +170,7 @@
       '<span class="adm-alca" title="Arraste para reordenar" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="9" cy="6" r="1.6"/><circle cx="15" cy="6" r="1.6"/><circle cx="9" cy="12" r="1.6"/><circle cx="15" cy="12" r="1.6"/><circle cx="9" cy="18" r="1.6"/><circle cx="15" cy="18" r="1.6"/></svg></span>' +
       '<button type="button" class="adm-link-corpo" data-acao="editar">' +
         '<span class="adm-link-ico' + (l.destaque ? ' is-destaque' : '') + '">' + ico(l.icone) + '</span>' +
-        '<span class="adm-link-texto"><strong>' + esc(l.titulo || 'Sem título') + '</strong><small>' + esc(l.url.replace(/^https?:\/\/(www\.)?/, '')) + '</small>' +
+        '<span class="adm-link-texto"><strong>' + esc(l.titulo || 'Sem título') + '</strong><small>' + esc(l.tipo === 'copiar' ? 'Copia: ' + l.copiar : l.url.replace(/^https?:\/\/(www\.)?/, '')) + '</small>' +
           '<span class="adm-chips">' + (l.destaque ? '<span class="adm-chip adm-chip--destaque">Destaque</span>' : '') +
           (sit ? '<span class="adm-chip adm-chip--' + sit[0] + '">' + esc(sit[1]) + '</span>' : '') + '</span>' +
         '</span>' +
@@ -326,7 +326,7 @@
   /* ------------------------------------------------------------ Diálogo do link */
   function abrirDialogo(si, li) {
     var novo = li < 0;
-    var l = novo ? { titulo: '', descricao: '', url: '', icone: 'link', destaque: false, ativo: true, inicio: '', fim: '' } : estado.secoes[si].links[li];
+    var l = novo ? { tipo: 'link', titulo: '', descricao: '', url: '', copiar: '', rotuloUrl: '', icone: 'link', destaque: false, ativo: true, inicio: '', fim: '' } : estado.secoes[si].links[li];
     var f = $('form-link');
     editando = { secao: si, indice: li };
 
@@ -334,6 +334,8 @@
     $('btn-excluir-link').hidden = novo;
     $('link-erro').textContent = '';
     f.titulo.value = l.titulo; f.descricao.value = l.descricao; f.url.value = l.url;
+    f.tipo.value = l.tipo || 'link'; f.copiar.value = l.copiar || ''; f.rotuloUrl.value = l.rotuloUrl || '';
+    mostrarTipo();
     f.ativo.checked = l.ativo; f.destaque.checked = l.destaque;
     f.inicio.value = l.inicio || ''; f.fim.value = l.fim || '';
     $('link-secao').innerHTML = estado.secoes.map(function (s, i) {
@@ -343,6 +345,13 @@
     f.querySelectorAll('.campo').forEach(function (c) { c.classList.remove('is-erro'); });
     $('dialogo-link').showModal();
     if (novo) f.titulo.focus();
+  }
+
+  /* Mostra só os campos do tipo escolhido (abre link / copia texto) */
+  function mostrarTipo() {
+    var f = $('form-link'), tipo = f.tipo.value || 'link';
+    f.querySelectorAll('[data-so]').forEach(function (el) { el.hidden = el.dataset.so !== tipo; });
+    $('rotulo-url').innerHTML = tipo === 'copiar' ? 'Link "saiba mais" <small>(opcional)</small>' : 'Endereço (link) <em>*</em>';
   }
 
   function marcarIcone(nome) {
@@ -375,6 +384,8 @@
       if (sugestao) marcarIcone(sugestao);
     });
 
+    f.addEventListener('change', function (e) { if (e.target.name === 'tipo') mostrarTipo(); });
+
     dlg.addEventListener('click', function (e) {
       if (e.target.closest('[data-fechar]') || e.target === dlg) dlg.close();
     });
@@ -389,9 +400,14 @@
     f.addEventListener('submit', function (e) {
       e.preventDefault();
       var titulo = f.titulo.value.trim(), url = normalizarUrl(f.url.value);
+      var tipo = f.tipo.value, texto = f.copiar.value.trim();
       f.titulo.closest('.campo').classList.toggle('is-erro', !titulo);
-      f.url.closest('.campo').classList.toggle('is-erro', !url);
-      if (!titulo || !url) { $('link-erro').textContent = 'Preencha o título e o endereço.'; return; }
+      f.url.closest('.campo').classList.toggle('is-erro', tipo === 'link' && !url);
+      f.copiar.closest('.campo').classList.toggle('is-erro', tipo === 'copiar' && !texto);
+      if (!titulo || (tipo === 'link' ? !url : !texto)) {
+        $('link-erro').textContent = tipo === 'link' ? 'Preencha o título e o endereço.' : 'Preencha o título e o texto a copiar.';
+        return;
+      }
       if (f.inicio.value && f.fim.value && f.fim.value < f.inicio.value) { $('link-erro').textContent = 'A data final é anterior à inicial.'; return; }
 
       var origem = estado.secoes[editando.secao];
@@ -400,7 +416,8 @@
       var l = novo ? { id: idUnico(slug(titulo), todosLinks()) } : origem.links[editando.indice];
       var marcado = $('seletor-icones').querySelector('[aria-checked="true"]');
       Object.assign(l, {
-        titulo: titulo, descricao: f.descricao.value.trim(), url: url,
+        tipo: tipo, titulo: titulo, descricao: f.descricao.value.trim(), url: url,
+        copiar: tipo === 'copiar' ? texto : '', rotuloUrl: tipo === 'copiar' ? f.rotuloUrl.value.trim() : '',
         icone: marcado ? marcado.dataset.icone : 'link',
         ativo: f.ativo.checked, destaque: f.destaque.checked,
         inicio: f.inicio.value, fim: f.fim.value

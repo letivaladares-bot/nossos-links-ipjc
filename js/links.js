@@ -31,7 +31,8 @@
 
   /* Link aparece se estiver ativo e dentro do período (inicio/fim opcionais, AAAA-MM-DD) */
   function visivel(l) {
-    if (!l || l.ativo === false || !l.url) return false;
+    if (!l || l.ativo === false) return false;
+    if (l.tipo === 'copiar' ? !l.copiar : !l.url) return false;
     var h = hojeISO();
     if (l.inicio && h < l.inicio) return false;
     if (l.fim && h > l.fim) return false;
@@ -50,7 +51,20 @@
     });
   }
 
+  /* Cartão compacto que copia um texto (ex.: chave Pix), com link opcional "saiba mais" */
+  function copiarHTML(l) {
+    return '<li><div class="lk-link lk-copiar">' +
+      '<span class="lk-link-ico">' + ico(l.icone) + '</span>' +
+      '<span class="lk-link-texto"><strong>' + esc(l.titulo) + '</strong>' +
+        (l.descricao ? '<small>' + esc(l.descricao) + '</small>' : '') +
+        (l.url ? '<a class="lk-copiar-mais" href="' + esc(l.url) + '" target="_blank" rel="noopener">' + esc(l.rotuloUrl || 'Saiba mais') + ' ›</a>' : '') +
+      '</span>' +
+      '<button type="button" class="lk-copiar-btn" data-copiar="' + esc(l.copiar) + '" aria-label="Copiar ' + esc(l.titulo) + '">' + ico('copiar') + '<span>Copiar</span></button>' +
+    '</div></li>';
+  }
+
   function linkHTML(l) {
+    if (l.tipo === 'copiar') return copiarHTML(l);
     var externo = /^https?:/i.test(l.url);
     return '<li><a class="lk-link' + (l.destaque ? ' lk-link--destaque' : '') + '" href="' + esc(l.url) + '"' +
       (externo ? ' target="_blank" rel="noopener"' : '') + '>' +
@@ -101,6 +115,15 @@
     clearTimeout(toast.t); toast.t = setTimeout(function () { t.classList.remove('is-visivel'); }, 2600);
   }
 
+  function copiar(texto) {
+    if (navigator.clipboard && window.isSecureContext) return navigator.clipboard.writeText(texto);
+    var t = document.createElement('textarea');
+    t.value = texto; t.setAttribute('readonly', ''); t.style.position = 'fixed'; t.style.opacity = '0';
+    document.body.appendChild(t); t.select();
+    var ok = document.execCommand('copy'); t.remove();
+    return ok ? Promise.resolve() : Promise.reject();
+  }
+
   function compartilhar() {
     var url = location.href.split(/[?#]/)[0];
     if (navigator.share) {
@@ -115,6 +138,16 @@
   document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('[data-icone]').forEach(function (el) { el.innerHTML = ico(el.getAttribute('data-icone')); });
     $('lk-compartilhar').addEventListener('click', compartilhar);
+    $('lk-secoes').addEventListener('click', function (e) {
+      var b = e.target.closest('[data-copiar]');
+      if (!b) return;
+      copiar(b.getAttribute('data-copiar')).then(function () {
+        b.classList.add('is-copiado');
+        b.querySelector('span').textContent = 'Copiado!';
+        toast('Chave copiada! Agora é só colar no app do banco.');
+        setTimeout(function () { b.classList.remove('is-copiado'); b.querySelector('span').textContent = 'Copiar'; }, 2500);
+      }, function () { prompt('Copie:', b.getAttribute('data-copiar')); });
+    });
 
     if (PREVIA) {
       document.body.classList.add('is-previa');

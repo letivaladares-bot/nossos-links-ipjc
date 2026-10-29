@@ -229,6 +229,16 @@
 .adm-icones button:hover { color: var(--azul); border-color: var(--azul-100); }
 .adm-icones button[aria-checked="true"] { background: var(--azul); border-color: var(--azul); color: #fff; }
 
+/* Tipo do item */
+.adm-tipos { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.adm-tipos label { position: relative; cursor: pointer; }
+.adm-tipos input { position: absolute; opacity: 0; }
+.adm-tipos span { display: block; height: 100%; padding: 11px 14px; border: 1.5px solid var(--linha); border-radius: 12px; background: var(--creme); font-size: .86rem; font-weight: 500; transition: border-color .2s, background-color .2s, color .2s; }
+.adm-tipos small { font-weight: 400; color: var(--cinza-600); }
+.adm-tipos input:checked + span { border-color: var(--azul); background: var(--azul-100); color: var(--azul); }
+.adm-tipos input:focus-visible + span { outline: 3px solid var(--mostarda); outline-offset: 2px; }
+@media (max-width: 480px) { .adm-tipos { grid-template-columns: 1fr; } }
+
 /* Prévia ----------------------------------------------------------------- */
 .adm-previa { position: sticky; top: 82px; align-self: start; }
 .adm-previa-topo { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; font-size: .74rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--borgonha); }
