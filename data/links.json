@@ -22,45 +22,45 @@
           "tipo": "link",
           "titulo": "Formulário do visitante",
           "descricao": "Queremos conhecer você",
-          "url": "https://www.ipjc.org.br/contato.html#visitante",
+          "url": "https://letivaladares-bot.github.io/ipjc-site/contato.html#visitante",
           "copiar": "",
           "rotuloUrl": "",
           "icone": "formulario",
+          "imagem": "",
           "destaque": false,
           "ativo": true,
           "inicio": "",
-          "fim": "",
-          "imagem": ""
+          "fim": ""
         },
         {
           "id": "como-chegar",
           "tipo": "link",
           "titulo": "Como chegar",
           "descricao": "Rua Carlos Delgado Guerra Pinto, 761",
-          "url": "https://www.google.com/maps/search/?api=1&query=Rua+Carlos+Delgado+Guerra+Pinto+761+Jardim+Camburi+Vitoria+ES",
+          "url": "https://letivaladares-bot.github.io/ipjc-site/contato.html",
           "copiar": "",
           "rotuloUrl": "",
           "icone": "pin",
+          "imagem": "",
           "destaque": false,
           "ativo": true,
           "inicio": "",
-          "fim": "",
-          "imagem": ""
+          "fim": ""
         },
         {
           "id": "programacao",
           "tipo": "link",
           "titulo": "Programação da igreja",
           "descricao": "Cultos, EBD e eventos especiais",
-          "url": "https://www.ipjc.org.br/programacoes.html",
+          "url": "https://letivaladares-bot.github.io/ipjc-site/programacoes.html",
           "copiar": "",
           "rotuloUrl": "",
           "icone": "calendario",
+          "imagem": "",
           "destaque": false,
           "ativo": true,
           "inicio": "",
-          "fim": "",
-          "imagem": ""
+          "fim": ""
         }
       ]
     },
@@ -73,17 +73,47 @@
         {
           "id": "pix",
           "tipo": "copiar",
-          "titulo": "Pix da igreja · CNPJ",
+          "titulo": "Dízimos e Ofertas - IPJC",
           "descricao": "02.342.872/0001-63",
           "url": "https://www.ipjc.org.br/contribua.html",
           "copiar": "02342872000163",
           "rotuloUrl": "Outras formas",
           "icone": "doar",
+          "imagem": "",
           "destaque": false,
           "ativo": true,
           "inicio": "",
-          "fim": "",
-          "imagem": ""
+          "fim": ""
+        },
+        {
+          "id": "ofertas-chacara-parreiral",
+          "tipo": "copiar",
+          "titulo": "Ofertas - Chácara Parreiral",
+          "descricao": "",
+          "url": "",
+          "copiar": "ipbcp.cp@gmail.com",
+          "rotuloUrl": "",
+          "icone": "doar",
+          "imagem": "",
+          "destaque": false,
+          "ativo": true,
+          "inicio": "",
+          "fim": ""
+        },
+        {
+          "id": "ofertas-santa-maria-de-jetiba",
+          "tipo": "copiar",
+          "titulo": "Ofertas - Santa Maria de Jetibá",
+          "descricao": "",
+          "url": "",
+          "copiar": "(27) 98128-3997",
+          "rotuloUrl": "",
+          "icone": "link",
+          "imagem": "",
+          "destaque": false,
+          "ativo": true,
+          "inicio": "",
+          "fim": ""
         }
       ]
     },
@@ -102,11 +132,11 @@
           "copiar": "",
           "rotuloUrl": "",
           "icone": "calendario",
+          "imagem": "",
           "destaque": false,
           "ativo": true,
           "inicio": "",
-          "fim": "2026-11-02",
-          "imagem": ""
+          "fim": "2026-11-02"
         }
       ]
     },
@@ -125,11 +155,11 @@
           "copiar": "",
           "rotuloUrl": "",
           "icone": "youtube",
+          "imagem": "",
           "destaque": false,
           "ativo": true,
           "inicio": "",
-          "fim": "",
-          "imagem": ""
+          "fim": ""
         },
         {
           "id": "spotify",
@@ -140,11 +170,11 @@
           "copiar": "",
           "rotuloUrl": "",
           "icone": "spotify",
+          "imagem": "",
           "destaque": false,
           "ativo": true,
           "inicio": "",
-          "fim": "",
-          "imagem": ""
+          "fim": ""
         }
       ]
     },
@@ -163,11 +193,11 @@
           "copiar": "",
           "rotuloUrl": "",
           "icone": "musica",
+          "imagem": "",
           "destaque": false,
           "ativo": true,
           "inicio": "",
-          "fim": "",
-          "imagem": ""
+          "fim": ""
         },
         {
           "id": "playlist-oficial",
@@ -178,11 +208,11 @@
           "copiar": "",
           "rotuloUrl": "",
           "icone": "musica",
+          "imagem": "",
           "destaque": false,
           "ativo": true,
           "inicio": "",
-          "fim": "",
-          "imagem": ""
+          "fim": ""
         },
         {
           "id": "playlist-coram-deo",
@@ -193,11 +223,11 @@
           "copiar": "",
           "rotuloUrl": "",
           "icone": "musica",
+          "imagem": "",
           "destaque": false,
           "ativo": true,
           "inicio": "",
-          "fim": "",
-          "imagem": ""
+          "fim": ""
         }
       ]
     },
@@ -216,11 +246,11 @@
           "copiar": "",
           "rotuloUrl": "",
           "icone": "enviar",
+          "imagem": "",
           "destaque": false,
           "ativo": true,
           "inicio": "",
-          "fim": "",
-          "imagem": ""
+          "fim": ""
         },
         {
           "id": "boletim",
@@ -231,11 +261,11 @@
           "copiar": "",
           "rotuloUrl": "",
           "icone": "documento",
+          "imagem": "",
           "destaque": false,
           "ativo": true,
           "inicio": "",
-          "fim": "",
-          "imagem": ""
+          "fim": ""
         },
         {
           "id": "plano-leitura",
@@ -246,11 +276,11 @@
           "copiar": "",
           "rotuloUrl": "",
           "icone": "livro",
+          "imagem": "",
           "destaque": false,
           "ativo": true,
           "inicio": "",
-          "fim": "",
-          "imagem": ""
+          "fim": ""
         },
         {
           "id": "site",
@@ -261,11 +291,11 @@
           "copiar": "",
           "rotuloUrl": "",
           "icone": "globo",
+          "imagem": "",
           "destaque": false,
           "ativo": true,
           "inicio": "",
-          "fim": "",
-          "imagem": ""
+          "fim": ""
         }
       ]
     },
@@ -284,11 +314,11 @@
           "copiar": "",
           "rotuloUrl": "",
           "icone": "instagram",
+          "imagem": "",
           "destaque": false,
           "ativo": true,
           "inicio": "",
-          "fim": "",
-          "imagem": ""
+          "fim": ""
         },
         {
           "id": "facebook",
@@ -299,11 +329,11 @@
           "copiar": "",
           "rotuloUrl": "",
           "icone": "facebook",
+          "imagem": "",
           "destaque": false,
           "ativo": true,
           "inicio": "",
-          "fim": "",
-          "imagem": ""
+          "fim": ""
         },
         {
           "id": "whatsapp",
@@ -314,17 +344,17 @@
           "copiar": "",
           "rotuloUrl": "",
           "icone": "whatsapp",
+          "imagem": "",
           "destaque": false,
           "ativo": true,
           "inicio": "",
-          "fim": "",
-          "imagem": ""
+          "fim": ""
         }
       ]
     }
   ],
   "rodape": {
-    "endereco": "Rua Carlos Delgado Guerra Pinto, 761 · Jardim Camburi · Vitória/ES",
-    "texto": "Igreja Presbiteriana do Brasil"
+    "texto": "Igreja Presbiteriana do Brasil",
+    "endereco": "Rua Carlos Delgado Guerra Pinto, 761 · Jardim Camburi · Vitória/ES"
   }
 }
