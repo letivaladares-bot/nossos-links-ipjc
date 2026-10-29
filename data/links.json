@@ -142,6 +142,56 @@
       ]
     },
     {
+      "id": "som-da-ipjc",
+      "titulo": "Som da IPJC",
+      "recolhida": false,
+      "cor": "auto",
+      "links": [
+        {
+          "id": "musicas-da-semana",
+          "tipo": "link",
+          "titulo": "Músicas da semana",
+          "descricao": "Os louvores dos cultos · atualizada toda semana",
+          "url": "https://open.spotify.com/playlist/0zVVnVIc4hW7bqAzJX9WNG",
+          "copiar": "",
+          "rotuloUrl": "",
+          "icone": "musica",
+          "destaque": false,
+          "ativo": true,
+          "inicio": "",
+          "fim": ""
+        },
+        {
+          "id": "playlist-oficial",
+          "tipo": "link",
+          "titulo": "Playlist oficial da IPJC",
+          "descricao": "As músicas que marcam a nossa igreja",
+          "url": "https://open.spotify.com/playlist/0aI1HQR1NZWA4jRSIR0hKi",
+          "copiar": "",
+          "rotuloUrl": "",
+          "icone": "musica",
+          "destaque": false,
+          "ativo": true,
+          "inicio": "",
+          "fim": ""
+        },
+        {
+          "id": "playlist-coram-deo",
+          "tipo": "link",
+          "titulo": "Playlist do Retiro Coram Deo",
+          "descricao": "As músicas do nosso retiro",
+          "url": "https://open.spotify.com/playlist/69BhHiSj6TLeKQdniAxDZi",
+          "copiar": "",
+          "rotuloUrl": "",
+          "icone": "musica",
+          "destaque": false,
+          "ativo": true,
+          "inicio": "",
+          "fim": ""
+        }
+      ]
+    },
+    {
       "id": "leia",
       "titulo": "Leia",
       "recolhida": false,
