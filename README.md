@@ -1,4 +1,4 @@
-# IPJC Links
+# Nossos Links IPJC
 
 Página de links da Igreja Presbiteriana em Jardim Camburi — a "árvore de links" dos QR Codes e da bio do Instagram, com a identidade visual do site v3 (`ipjc-site`): mesmas cores, fontes (Poppins, Source Serif 4, Caveat), logo e as ondas do calçadão.
 
@@ -7,7 +7,7 @@ Site estático (HTML/CSS/JS puro), sem build.
 ## Estrutura
 
 ```
-linktree-ipjc/
+nossos-links-ipjc/
 ├── index.html            Página pública de links
 ├── admin.html            Painel de administração (noindex)
 ├── data/links.json       CONTEÚDO publicado (perfil, redes, "ao vivo", seções e links)
@@ -45,7 +45,7 @@ O botão **Publicar** grava `data/links.json` direto no GitHub (repositório e b
 Configuração única por aparelho (aba **Publicação**):
 
 1. GitHub → Settings → Developer settings → Personal access tokens → **Fine-grained tokens** → Generate new token.
-2. Repository access: **Only select repositories** → `letivaladares-bot/linktree-ipjc`.
+2. Repository access: **Only select repositories** → `letivaladares-bot/nossos-links-ipjc`.
 3. Permissions → Repository permissions → **Contents: Read and write**.
 4. Cole o token no painel. Ele fica guardado só naquele navegador.
 
@@ -54,7 +54,7 @@ Sem token: **Baixar links.json** e envie o arquivo para a pasta `data/` do repos
 ## Hospedagem (GitHub Pages)
 
 1. No repositório: Settings → Pages → Source: **Deploy from a branch** → `main` / `(root)`.
-2. A página fica em `https://letivaladares-bot.github.io/linktree-ipjc/`.
+2. A página fica em `https://letivaladares-bot.github.io/nossos-links-ipjc/`.
 3. **Domínio próprio (recomendado para QR Codes):** ex. `links.ipjc.org.br` — crie um registro CNAME apontando para `letivaladares-bot.github.io` e informe o domínio em Settings → Pages. Depois atualize `urlPublica` em `js/admin-config.js` e gere o QR Code de novo.
 
 > Dica: imprima QR Codes com o domínio próprio. Assim, se um dia a hospedagem mudar, os impressos continuam funcionando.

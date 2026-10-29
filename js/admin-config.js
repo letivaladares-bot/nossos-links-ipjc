@@ -12,10 +12,10 @@ window.IPJC_LINKS_ADMIN = {
   senhaSha256: 'b531533253a83507873679ce91f565770f419f6e06a5f1f3102a305ea25b8bb5',
 
   github: {
-    repo: 'letivaladares-bot/linktree-ipjc',
+    repo: 'letivaladares-bot/nossos-links-ipjc',
     branch: 'main',
     arquivo: 'data/links.json'
   },
 
-  urlPublica: 'https://letivaladares-bot.github.io/linktree-ipjc/'
+  urlPublica: 'https://letivaladares-bot.github.io/nossos-links-ipjc/'
 };
