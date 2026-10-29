@@ -52,9 +52,15 @@
   }
 
   /* Cartão compacto que copia um texto (ex.: chave Pix), com link opcional "saiba mais" */
+  function icoHTML(l) {
+    return l.imagem
+      ? '<span class="lk-link-ico lk-link-img"><img src="' + esc(l.imagem) + '" alt="" loading="lazy" width="44" height="44"></span>'
+      : '<span class="lk-link-ico">' + ico(l.icone) + '</span>';
+  }
+
   function copiarHTML(l) {
     return '<li><div class="lk-link lk-copiar">' +
-      '<span class="lk-link-ico">' + ico(l.icone) + '</span>' +
+      icoHTML(l) +
       '<span class="lk-link-texto"><strong>' + esc(l.titulo) + '</strong>' +
         (l.descricao ? '<small>' + esc(l.descricao) + '</small>' : '') +
         (l.url ? '<a class="lk-copiar-mais" href="' + esc(l.url) + '" target="_blank" rel="noopener">' + esc(l.rotuloUrl || 'Saiba mais') + ' ›</a>' : '') +
@@ -68,7 +74,7 @@
     var externo = /^https?:/i.test(l.url);
     return '<li><a class="lk-link' + (l.destaque ? ' lk-link--destaque' : '') + '" href="' + esc(l.url) + '"' +
       (externo ? ' target="_blank" rel="noopener"' : '') + '>' +
-      '<span class="lk-link-ico">' + ico(l.icone) + '</span>' +
+      icoHTML(l) +
       '<span class="lk-link-texto"><strong>' + esc(l.titulo) + '</strong>' +
       (l.descricao ? '<small>' + esc(l.descricao) + '</small>' : '') + '</span>' +
       ico('diagonal', 'lk-link-seta') + '</a></li>';

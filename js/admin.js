@@ -102,7 +102,7 @@
     d.secoes = (Array.isArray(d.secoes) ? d.secoes : []).map(function (s) {
       s = Object.assign({ id: '', titulo: '', recolhida: false, cor: 'auto' }, s);
       s.links = (Array.isArray(s.links) ? s.links : []).map(function (l) {
-        return Object.assign({ id: '', tipo: 'link', titulo: '', descricao: '', url: '', copiar: '', rotuloUrl: '', icone: 'link', destaque: false, ativo: true, inicio: '', fim: '' }, l);
+        return Object.assign({ id: '', tipo: 'link', titulo: '', descricao: '', url: '', copiar: '', rotuloUrl: '', icone: 'link', imagem: '', destaque: false, ativo: true, inicio: '', fim: '' }, l);
       });
       return s;
     });
@@ -169,7 +169,7 @@
     return '<li class="adm-link' + (sit && sit[0] !== 'periodo' ? ' is-apagado' : '') + '" draggable="true" data-s="' + si + '" data-l="' + li + '">' +
       '<span class="adm-alca" title="Arraste para reordenar" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="9" cy="6" r="1.6"/><circle cx="15" cy="6" r="1.6"/><circle cx="9" cy="12" r="1.6"/><circle cx="15" cy="12" r="1.6"/><circle cx="9" cy="18" r="1.6"/><circle cx="15" cy="18" r="1.6"/></svg></span>' +
       '<button type="button" class="adm-link-corpo" data-acao="editar">' +
-        '<span class="adm-link-ico' + (l.destaque ? ' is-destaque' : '') + '">' + ico(l.icone) + '</span>' +
+        '<span class="adm-link-ico' + (l.destaque ? ' is-destaque' : '') + '">' + (l.imagem ? '<img src="' + esc(l.imagem) + '" alt="">' : ico(l.icone)) + '</span>' +
         '<span class="adm-link-texto"><strong>' + esc(l.titulo || 'Sem título') + '</strong><small>' + esc(l.tipo === 'copiar' ? 'Copia: ' + l.copiar : l.url.replace(/^https?:\/\/(www\.)?/, '')) + '</small>' +
           '<span class="adm-chips">' + (l.destaque ? '<span class="adm-chip adm-chip--destaque">Destaque</span>' : '') +
           (sit ? '<span class="adm-chip adm-chip--' + sit[0] + '">' + esc(sit[1]) + '</span>' : '') + '</span>' +
@@ -326,7 +326,7 @@
   /* ------------------------------------------------------------ Diálogo do link */
   function abrirDialogo(si, li) {
     var novo = li < 0;
-    var l = novo ? { tipo: 'link', titulo: '', descricao: '', url: '', copiar: '', rotuloUrl: '', icone: 'link', destaque: false, ativo: true, inicio: '', fim: '' } : estado.secoes[si].links[li];
+    var l = novo ? { tipo: 'link', titulo: '', descricao: '', url: '', copiar: '', rotuloUrl: '', icone: 'link', imagem: '', destaque: false, ativo: true, inicio: '', fim: '' } : estado.secoes[si].links[li];
     var f = $('form-link');
     editando = { secao: si, indice: li };
 
@@ -342,6 +342,7 @@
       return '<option value="' + i + '"' + (i === si ? ' selected' : '') + '>' + esc(s.titulo || 'Sem título (topo)') + '</option>';
     }).join('');
     marcarIcone(l.icone);
+    mostrarImagem(l.imagem || '');
     f.querySelectorAll('.campo').forEach(function (c) { c.classList.remove('is-erro'); });
     $('dialogo-link').showModal();
     if (novo) f.titulo.focus();
@@ -352,6 +353,33 @@
     var f = $('form-link'), tipo = f.tipo.value || 'link';
     f.querySelectorAll('[data-so]').forEach(function (el) { el.hidden = el.dataset.so !== tipo; });
     $('rotulo-url').innerHTML = tipo === 'copiar' ? 'Link "saiba mais" <small>(opcional)</small>' : 'Endereço (link) <em>*</em>';
+  }
+
+  /* Imagem do link: recorte quadrado central, 192 px, JPEG — fica leve dentro do links.json */
+  var imagemAtual = '';
+  function mostrarImagem(src) {
+    imagemAtual = src;
+    $('imagem-previa').innerHTML = src ? '<img src="' + esc(src) + '" alt="">' : '';
+    $('btn-remover-imagem').hidden = !src;
+    $('campo-icone').classList.toggle('is-inativo', !!src);
+  }
+  function reduzirImagem(arquivo) {
+    return new Promise(function (ok, falha) {
+      var url = URL.createObjectURL(arquivo), img = new Image();
+      img.onload = function () {
+        var lado = Math.min(img.naturalWidth, img.naturalHeight), tam = 192;
+        var c = document.createElement('canvas');
+        c.width = c.height = tam;
+        var g = c.getContext('2d');
+        g.fillStyle = '#fff'; g.fillRect(0, 0, tam, tam);
+        g.imageSmoothingQuality = 'high';
+        g.drawImage(img, (img.naturalWidth - lado) / 2, (img.naturalHeight - lado) / 2, lado, lado, 0, 0, tam, tam);
+        URL.revokeObjectURL(url);
+        ok(c.toDataURL('image/jpeg', .86));
+      };
+      img.onerror = function () { URL.revokeObjectURL(url); falha(); };
+      img.src = url;
+    });
   }
 
   function marcarIcone(nome) {
@@ -386,6 +414,14 @@
 
     f.addEventListener('change', function (e) { if (e.target.name === 'tipo') mostrarTipo(); });
 
+    $('input-imagem').addEventListener('change', function (e) {
+      var arq = e.target.files[0];
+      e.target.value = '';
+      if (!arq) return;
+      reduzirImagem(arq).then(mostrarImagem, function () { toast('Não foi possível abrir essa imagem.', true); });
+    });
+    $('btn-remover-imagem').addEventListener('click', function () { mostrarImagem(''); });
+
     dlg.addEventListener('click', function (e) {
       if (e.target.closest('[data-fechar]') || e.target === dlg) dlg.close();
     });
@@ -419,6 +455,7 @@
         tipo: tipo, titulo: titulo, descricao: f.descricao.value.trim(), url: url,
         copiar: tipo === 'copiar' ? texto : '', rotuloUrl: tipo === 'copiar' ? f.rotuloUrl.value.trim() : '',
         icone: marcado ? marcado.dataset.icone : 'link',
+        imagem: imagemAtual,
         ativo: f.ativo.checked, destaque: f.destaque.checked,
         inicio: f.inicio.value, fim: f.fim.value
       });

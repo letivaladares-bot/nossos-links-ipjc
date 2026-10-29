@@ -101,6 +101,18 @@
       <p class="adm-ajuda" data-so="link">Dica: para WhatsApp, use <code>https://wa.me/5527999999999</code>.</p>
 
       <div class="campo">
+        <span>Imagem <small>(opcional — arte da programação, logo do ministério… substitui o ícone)</small></span>
+        <div class="adm-imagem">
+          <span class="adm-imagem-previa" id="imagem-previa"></span>
+          <div class="adm-imagem-botoes">
+            <label class="btn btn--ghost btn--p adm-arquivo">Escolher imagem<input type="file" accept="image/*" id="input-imagem"></label>
+            <button type="button" class="btn btn--perigo btn--p" id="btn-remover-imagem" hidden>Remover imagem</button>
+            <small class="adm-ajuda">A imagem é recortada no centro em formato quadrado e reduzida automaticamente.</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="campo" id="campo-icone">
         <span>Ícone</span>
         <div class="adm-icones" id="seletor-icones" role="radiogroup" aria-label="Ícone"></div>
       </div>

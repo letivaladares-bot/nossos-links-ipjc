@@ -136,6 +136,11 @@
 .lk-link--destaque .lk-link-seta { color: var(--mostarda); }
 .lk-link--destaque:hover .lk-link-seta { color: var(--mostarda); }
 
+/* Imagem no lugar do ícone (arte da programação, logo de ministério) */
+.lk-link-ico.lk-link-img, .lk-secao .lk-link-ico.lk-link-img,
+.lk-secao .lk-link:hover .lk-link-ico.lk-link-img { overflow: hidden; background: var(--bege-claro); }
+.lk-link-img img { width: 100%; height: 100%; object-fit: cover; }
+
 /* Cartão "copiar" (chave Pix) */
 .lk-copiar { grid-template-columns: 44px 1fr auto; }
 .lk-copiar:hover { transform: none; box-shadow: var(--sombra); border-color: var(--linha); }

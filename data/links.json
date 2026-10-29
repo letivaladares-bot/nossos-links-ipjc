@@ -29,7 +29,8 @@
           "destaque": false,
           "ativo": true,
           "inicio": "",
-          "fim": ""
+          "fim": "",
+          "imagem": ""
         },
         {
           "id": "como-chegar",
@@ -43,7 +44,8 @@
           "destaque": false,
           "ativo": true,
           "inicio": "",
-          "fim": ""
+          "fim": "",
+          "imagem": ""
         },
         {
           "id": "programacao",
@@ -57,7 +59,8 @@
           "destaque": false,
           "ativo": true,
           "inicio": "",
-          "fim": ""
+          "fim": "",
+          "imagem": ""
         }
       ]
     },
@@ -79,7 +82,8 @@
           "destaque": false,
           "ativo": true,
           "inicio": "",
-          "fim": ""
+          "fim": "",
+          "imagem": ""
         }
       ]
     },
@@ -101,7 +105,8 @@
           "destaque": false,
           "ativo": true,
           "inicio": "",
-          "fim": "2026-11-02"
+          "fim": "2026-11-02",
+          "imagem": ""
         }
       ]
     },
@@ -123,7 +128,8 @@
           "destaque": false,
           "ativo": true,
           "inicio": "",
-          "fim": ""
+          "fim": "",
+          "imagem": ""
         },
         {
           "id": "spotify",
@@ -137,7 +143,8 @@
           "destaque": false,
           "ativo": true,
           "inicio": "",
-          "fim": ""
+          "fim": "",
+          "imagem": ""
         }
       ]
     },
@@ -150,7 +157,7 @@
         {
           "id": "musicas-da-semana",
           "tipo": "link",
-          "titulo": "Músicas da semana",
+          "titulo": "Depois do Amém",
           "descricao": "Os louvores dos cultos · atualizada toda semana",
           "url": "https://open.spotify.com/playlist/0zVVnVIc4hW7bqAzJX9WNG",
           "copiar": "",
@@ -159,13 +166,14 @@
           "destaque": false,
           "ativo": true,
           "inicio": "",
-          "fim": ""
+          "fim": "",
+          "imagem": ""
         },
         {
           "id": "playlist-oficial",
           "tipo": "link",
-          "titulo": "Playlist oficial da IPJC",
-          "descricao": "As músicas que marcam a nossa igreja",
+          "titulo": "This Is IPJC",
+          "descricao": "A playlist oficial da igreja",
           "url": "https://open.spotify.com/playlist/0aI1HQR1NZWA4jRSIR0hKi",
           "copiar": "",
           "rotuloUrl": "",
@@ -173,12 +181,13 @@
           "destaque": false,
           "ativo": true,
           "inicio": "",
-          "fim": ""
+          "fim": "",
+          "imagem": ""
         },
         {
           "id": "playlist-coram-deo",
           "tipo": "link",
-          "titulo": "Playlist do Retiro Coram Deo",
+          "titulo": "Retiro Coram Deo Oficial",
           "descricao": "As músicas do nosso retiro",
           "url": "https://open.spotify.com/playlist/69BhHiSj6TLeKQdniAxDZi",
           "copiar": "",
@@ -187,7 +196,8 @@
           "destaque": false,
           "ativo": true,
           "inicio": "",
-          "fim": ""
+          "fim": "",
+          "imagem": ""
         }
       ]
     },
@@ -209,7 +219,8 @@
           "destaque": false,
           "ativo": true,
           "inicio": "",
-          "fim": ""
+          "fim": "",
+          "imagem": ""
         },
         {
           "id": "boletim",
@@ -223,7 +234,8 @@
           "destaque": false,
           "ativo": true,
           "inicio": "",
-          "fim": ""
+          "fim": "",
+          "imagem": ""
         },
         {
           "id": "plano-leitura",
@@ -237,7 +249,8 @@
           "destaque": false,
           "ativo": true,
           "inicio": "",
-          "fim": ""
+          "fim": "",
+          "imagem": ""
         },
         {
           "id": "site",
@@ -251,7 +264,8 @@
           "destaque": false,
           "ativo": true,
           "inicio": "",
-          "fim": ""
+          "fim": "",
+          "imagem": ""
         }
       ]
     },
@@ -273,7 +287,8 @@
           "destaque": false,
           "ativo": true,
           "inicio": "",
-          "fim": ""
+          "fim": "",
+          "imagem": ""
         },
         {
           "id": "facebook",
@@ -287,7 +302,8 @@
           "destaque": false,
           "ativo": true,
           "inicio": "",
-          "fim": ""
+          "fim": "",
+          "imagem": ""
         },
         {
           "id": "whatsapp",
@@ -301,7 +317,8 @@
           "destaque": false,
           "ativo": true,
           "inicio": "",
-          "fim": ""
+          "fim": "",
+          "imagem": ""
         }
       ]
     }
